@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 interface Position {
   x: number;
@@ -7,55 +7,65 @@ interface Position {
 }
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
-  const [previousPosition, setPreviousPosition] = useState<Position>({ x: 0, y: 0 });
+  const [mousePosition, setMousePosition] = useState<Position>({ x: 0, y: 0 });
+  const [characterPosition, setCharacterPosition] = useState<Position>({ x: 0, y: 0 });
   const [rotation, setRotation] = useState(0);
+  const animationRef = useRef<number>();
 
   useEffect(() => {
-    const updateCursor = (e: MouseEvent) => {
-      const newPosition = { x: e.clientX, y: e.clientY };
-      
-      // Calculate rotation based on movement direction
-      const deltaX = newPosition.x - previousPosition.x;
-      const deltaY = newPosition.y - previousPosition.y;
-      
-      if (deltaX !== 0 || deltaY !== 0) {
-        const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-        setRotation(angle);
-        setPreviousPosition(position);
-      }
-      
-      setPosition(newPosition);
+    const updateMousePosition = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    const hideCursor = () => {
-      document.body.style.cursor = 'none';
-    };
-
-    const showCursor = () => {
-      document.body.style.cursor = 'auto';
-    };
-
-    // Hide default cursor and add event listeners
-    hideCursor();
-    window.addEventListener('mousemove', updateCursor);
-    window.addEventListener('mouseleave', showCursor);
-    window.addEventListener('mouseenter', hideCursor);
+    window.addEventListener('mousemove', updateMousePosition);
 
     return () => {
-      showCursor();
-      window.removeEventListener('mousemove', updateCursor);
-      window.removeEventListener('mouseleave', showCursor);
-      window.removeEventListener('mouseenter', hideCursor);
+      window.removeEventListener('mousemove', updateMousePosition);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
-  }, [position, previousPosition]);
+  }, []);
+
+  useEffect(() => {
+    const animate = () => {
+      setCharacterPosition(prevPos => {
+        const deltaX = mousePosition.x - prevPos.x;
+        const deltaY = mousePosition.y - prevPos.y;
+        
+        // Easing factor - adjust this to change how quickly the character follows
+        const easing = 0.1;
+        
+        const newX = prevPos.x + deltaX * easing;
+        const newY = prevPos.y + deltaY * easing;
+        
+        // Calculate rotation based on movement direction
+        if (Math.abs(deltaX) > 0.1 || Math.abs(deltaY) > 0.1) {
+          const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+          setRotation(angle);
+        }
+        
+        return { x: newX, y: newY };
+      });
+      
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    animationRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [mousePosition]);
 
   return (
     <div 
-      className="fixed pointer-events-none z-[9999] transition-transform duration-75 ease-out"
+      className="fixed pointer-events-none z-[9999] transition-transform duration-100 ease-out"
       style={{
-        left: position.x - 16,
-        top: position.y - 16,
+        left: characterPosition.x - 16,
+        top: characterPosition.y - 16,
         transform: `rotate(${rotation}deg)`,
       }}
     >
