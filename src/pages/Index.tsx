@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Github, Linkedin, Mail, ExternalLink, Code, Cpu, Gamepad2, Pickaxe, Wrench } from 'lucide-react';
+import CustomCursor from "@/components/CustomCursor";
 
 const Index = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -89,6 +90,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-stone-100 text-slate-800 relative overflow-hidden">
+      {/* Custom Cursor */}
+      <CustomCursor />
+      
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
