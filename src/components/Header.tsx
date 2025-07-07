@@ -15,17 +15,7 @@ const Header = () => {
       <p className="text-xl text-slate-600 mb-8 font-mono">
         {'>'} Computer Science Student & Developer
       </p>
-      <div className="flex justify-center space-x-4 relative">
-        {/* Ghast GIF positioned to the left of GitHub button */}
-        <div className="absolute -left-20 top-1/2 transform -translate-y-1/2 pointer-events-none z-10">
-          <img 
-            src="/lovable-uploads/5be5de30-8064-4fd8-b356-dc8f7a9265bd.png"
-            alt="Ghast"
-            className="w-12 h-12 pixelated"
-            draggable={false}
-          />
-        </div>
-
+      <div className="flex justify-center space-x-4">
         <Button variant="outline" size="sm" className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono">
           <Github className="w-4 h-4 mr-2" />
           GitHub
@@ -34,20 +24,9 @@ const Header = () => {
           <Linkedin className="w-4 h-4 mr-2" />
           LinkedIn
         </Button>
-        <Button variant="outline" size="sm" className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono relative">
+        <Button variant="outline" size="sm" className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono">
           <FileText className="w-4 h-4 mr-2" />
           Resume
-          
-          {/* Terraria Tree positioned to the right of Resume button */}
-          <div className="absolute -right-16 top-8 pointer-events-none z-10">
-            <img 
-              src="/lovable-uploads/9349430b-cc69-4c9e-a498-6fa60b2bb491.png"
-              alt="Terraria Tree"
-              className="w-12 h-auto pixelated"
-              draggable={false}
-              style={{ transform: 'translateY(8px)' }}
-            />
-          </div>
         </Button>
       </div>
     </header>

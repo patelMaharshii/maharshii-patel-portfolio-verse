@@ -7,78 +7,74 @@ interface Position {
 }
 
 const CustomCursor = () => {
-  const [mousePosition, setMousePosition] = useState<Position>({ x: 0, y: 0 });
-  const [characterPosition, setCharacterPosition] = useState<Position>({ x: 0, y: 0 });
-  const [rotation, setRotation] = useState(0);
-  const animationRef = useRef<number>();
+  const [curPosition, setCurPosition] = useState<Position>({ 
+    x: typeof window !== 'undefined' ? window.innerWidth / 2 : 0, 
+    y: typeof window !== 'undefined' ? window.innerHeight : 0 
+  });
+  const [targetPosition, setTargetPosition] = useState<Position>(curPosition);
+  const lastClientPos = useRef<Position>(curPosition);
+  const intervalRef = useRef<NodeJS.Timeout>();
+
+  // Linear interpolation function for smooth movement
+  const lerp = (a: number, b: number, alpha: number) => {
+    return a + alpha * (b - a);
+  };
+
+  // Update target position based on mouse/scroll events
+  const updateTarget = (event: MouseEvent | Event) => {
+    const mainElement = document.body;
+    const appBottom = mainElement.scrollHeight - 80;
+
+    // Get client position from mouse event or use last known position
+    const clientPos = 'clientX' in event && 'clientY' in event ? {
+      x: event.clientX,
+      y: event.clientY,
+    } : lastClientPos.current;
+
+    lastClientPos.current = clientPos;
+
+    // Calculate target position relative to document body
+    setTargetPosition({
+      x: clientPos.x - mainElement.getBoundingClientRect().left,
+      y: Math.min(clientPos.y - mainElement.getBoundingClientRect().top, appBottom)
+    });
+  };
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
+    // Add event listeners
+    document.addEventListener('pointermove', updateTarget);
+    window.addEventListener('scroll', updateTarget);
 
-    window.addEventListener('mousemove', updateMousePosition);
-
-    return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
-    };
-  }, []);
-
-  useEffect(() => {
-    const animate = () => {
-      setCharacterPosition(prevPos => {
-        const deltaX = mousePosition.x - prevPos.x;
-        const deltaY = mousePosition.y - prevPos.y;
-        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-        
-        // Stop when close to cursor (30px buffer)
-        if (distance < 30) {
-          return prevPos;
-        }
-        
-        // Easing factor - adjust this to change how quickly the character follows
-        const easing = 0.1;
-        
-        const newX = prevPos.x + deltaX * easing;
-        const newY = prevPos.y + deltaY * easing;
-        
-        // Calculate rotation based on movement direction
-        if (Math.abs(deltaX) > 0.1 || Math.abs(deltaY) > 0.1) {
-          const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-          setRotation(angle);
-        }
-        
-        return { x: newX, y: newY };
-      });
-      
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    animationRef.current = requestAnimationFrame(animate);
+    // Animation loop with smooth interpolation
+    const deltaTime = 1000 / 90;
+    intervalRef.current = setInterval(() => {
+      setCurPosition(prevPos => ({
+        x: lerp(prevPos.x, targetPosition.x, 5 * deltaTime / 1000),
+        y: lerp(prevPos.y, targetPosition.y, 3 * deltaTime / 1000),
+      }));
+    }, deltaTime);
 
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
+      document.removeEventListener('pointermove', updateTarget);
+      window.removeEventListener('scroll', updateTarget);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
       }
     };
-  }, [mousePosition]);
+  }, [targetPosition]);
 
   return (
     <div 
-      className="fixed pointer-events-none z-[9999] transition-transform duration-100 ease-out"
+      className="absolute pointer-events-none z-[9999]"
       style={{
-        left: characterPosition.x - 16,
-        top: characterPosition.y - 16,
-        transform: `rotate(${rotation}deg)`,
+        left: curPosition.x - 40,
+        top: curPosition.y - 40,
       }}
     >
       <img 
         src="/lovable-uploads/e0623049-85a6-42bd-99a6-b85660d47f50.png"
         alt="Mario Kart Cursor"
-        className="w-8 h-8 pixelated"
+        className="w-20 h-20 pixelated"
         draggable={false}
       />
     </div>
