@@ -19,15 +19,30 @@ const Header = () => {
         {'>'} Computer Science Student & Developer
       </p>
       <div className="flex justify-center space-x-4">
-        <Button variant="outline" size="sm" className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono">
+        <Button 
+          variant="outline" 
+          size="sm" 
+          className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono"
+          onClick={() => window.open('https://github.com/patelMaharshii', '_blank')}
+        >
           <Github className="w-4 h-4 mr-2" />
           GitHub
         </Button>
-        <Button variant="outline" size="sm" className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono">
+        <Button 
+          variant="outline" 
+          size="sm" 
+          className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono"
+          onClick={() => window.open('https://www.linkedin.com/in/maharshii-patel/', '_blank')}
+        >
           <Linkedin className="w-4 h-4 mr-2" />
           LinkedIn
         </Button>
-        <Button variant="outline" size="sm" className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono">
+        <Button 
+          variant="outline" 
+          size="sm" 
+          className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono"
+          onClick={() => window.open('https://maharshii-resume.tiiny.site/', '_blank')}
+        >
           <FileText className="w-4 h-4 mr-2" />
           Resume
         </Button>
