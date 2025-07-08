@@ -3,10 +3,13 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from 'lucide-react';
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const ProjectsSection = () => {
+  const scrollAnimation = useScrollAnimation();
+
   return (
-    <section className="mb-16">
+    <section ref={scrollAnimation.ref} className={`mb-16 ${scrollAnimation.className}`}>
       <h2 className="text-3xl font-bold text-center mb-8 text-slate-800 font-mono">
         Featured Projects
       </h2>

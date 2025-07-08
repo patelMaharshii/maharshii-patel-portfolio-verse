@@ -2,10 +2,13 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code } from 'lucide-react';
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const AboutSection = () => {
+  const scrollAnimation = useScrollAnimation();
+
   return (
-    <section className="mb-16">
+    <section ref={scrollAnimation.ref} className={`mb-16 ${scrollAnimation.className}`}>
       <Card className="bg-white/80 border-slate-200 shadow-lg backdrop-blur-sm">
         <CardHeader>
           <CardTitle className="text-slate-800 flex items-center font-mono">

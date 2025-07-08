@@ -2,10 +2,13 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, FileText } from 'lucide-react';
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Header = () => {
+  const scrollAnimation = useScrollAnimation();
+
   return (
-    <header className="text-center mb-16 animate-fade-in relative">
+    <header ref={scrollAnimation.ref} className={`text-center mb-16 relative ${scrollAnimation.className}`}>
       <div className="flex items-center justify-center mb-6">
         <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-800 mr-4 shadow-lg pixelated"></div>
         <h1 className="text-5xl font-bold text-slate-800 font-mono">
