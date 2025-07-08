@@ -87,7 +87,7 @@ const CustomCursor = () => {
       <img 
         src="/lovable-uploads/e0623049-85a6-42bd-99a6-b85660d47f50.png"
         alt="Mario Kart Cursor"
-        className="w-14 h-14 pixelated"
+        className="w-11 h-11 pixelated"
         style={{
           transform: `rotate(${rotation}deg)`,
         }}
