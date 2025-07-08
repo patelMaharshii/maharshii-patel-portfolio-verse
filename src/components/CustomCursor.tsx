@@ -12,6 +12,7 @@ const CustomCursor = () => {
     y: typeof window !== 'undefined' ? window.innerHeight : 0 
   });
   const [targetPosition, setTargetPosition] = useState<Position>(curPosition);
+  const [rotation, setRotation] = useState(0);
   const lastClientPos = useRef<Position>(curPosition);
   const intervalRef = useRef<NodeJS.Timeout>();
 
@@ -48,10 +49,22 @@ const CustomCursor = () => {
     // Animation loop with smooth interpolation
     const deltaTime = 1000 / 90;
     intervalRef.current = setInterval(() => {
-      setCurPosition(prevPos => ({
-        x: lerp(prevPos.x, targetPosition.x, 5 * deltaTime / 1000),
-        y: lerp(prevPos.y, targetPosition.y, 3 * deltaTime / 1000),
-      }));
+      setCurPosition(prevPos => {
+        const newPos = {
+          x: lerp(prevPos.x, targetPosition.x, 5 * deltaTime / 1000),
+          y: lerp(prevPos.y, targetPosition.y, 3 * deltaTime / 1000),
+        };
+        
+        // Calculate rotation based on movement direction
+        const dx = targetPosition.x - prevPos.x;
+        const dy = targetPosition.y - prevPos.y;
+        if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+          const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+          setRotation(angle);
+        }
+        
+        return newPos;
+      });
     }, deltaTime);
 
     return () => {
@@ -67,14 +80,17 @@ const CustomCursor = () => {
     <div 
       className="absolute pointer-events-none z-[9999]"
       style={{
-        left: curPosition.x - 40,
-        top: curPosition.y - 40,
+        left: curPosition.x - 30,
+        top: curPosition.y - 30,
       }}
     >
       <img 
         src="/lovable-uploads/e0623049-85a6-42bd-99a6-b85660d47f50.png"
         alt="Mario Kart Cursor"
-        className="w-20 h-20 pixelated"
+        className="w-15 h-15 pixelated"
+        style={{
+          transform: `rotate(${rotation}deg)`,
+        }}
         draggable={false}
       />
     </div>
