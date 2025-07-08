@@ -34,10 +34,11 @@ const CustomCursor = () => {
 
     lastClientPos.current = clientPos;
 
-    // Calculate target position relative to document body
+    // Calculate target position relative to document body with offset to stop before cursor
+    const offset = 20; // Distance to stop before cursor
     setTargetPosition({
-      x: clientPos.x - mainElement.getBoundingClientRect().left,
-      y: Math.min(clientPos.y - mainElement.getBoundingClientRect().top, appBottom)
+      x: clientPos.x - mainElement.getBoundingClientRect().left - offset,
+      y: Math.min(clientPos.y - mainElement.getBoundingClientRect().top - offset, appBottom)
     });
   };
 
