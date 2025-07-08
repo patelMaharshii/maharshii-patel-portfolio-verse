@@ -80,14 +80,14 @@ const CustomCursor = () => {
     <div 
       className="absolute pointer-events-none z-[9999]"
       style={{
-        left: curPosition.x - 30,
-        top: curPosition.y - 30,
+        left: curPosition.x - 28,
+        top: curPosition.y - 28,
       }}
     >
       <img 
         src="/lovable-uploads/e0623049-85a6-42bd-99a6-b85660d47f50.png"
         alt="Mario Kart Cursor"
-        className="w-15 h-15 pixelated"
+        className="w-14 h-14 pixelated"
         style={{
           transform: `rotate(${rotation}deg)`,
         }}
