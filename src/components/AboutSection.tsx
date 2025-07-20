@@ -16,17 +16,20 @@ const AboutSection = () => {
             About Me
           </CardTitle>
           <CardDescription className="text-slate-600 font-mono">
-            Building digital worlds, one block at a time
+            AI/ML Research Assistant & CS Student
           </CardDescription>
         </CardHeader>
         <CardContent className="text-slate-700">
-          <p className="mb-4 font-mono leading-relaxed">
-            Passionate about creating efficient, scalable solutions and exploring the intersection of technology and creativity. 
-            Currently pursuing my CS degree while working on projects that matter.
-          </p>
+          <div className="mb-4">
+            <h3 className="text-lg font-semibold text-slate-800 font-mono mb-2">Education</h3>
+            <p className="font-mono leading-relaxed">
+              <strong>Western University</strong> - Bachelor of Science in Computer Science<br/>
+              <span className="text-slate-600">Expected Graduation: May 2027 | GPA: 3.9/4.0</span>
+            </p>
+          </div>
           <p className="font-mono leading-relaxed">
-            When I'm not coding, you'll find me exploring procedurally generated worlds, racing virtual tracks, 
-            or building something new from scratch.
+            Passionate about AI/ML research and building innovative solutions. Currently working as an NSERC USRA recipient, 
+            developing genomic sequence generation models and performing data analysis for healthcare applications.
           </p>
         </CardContent>
       </Card>

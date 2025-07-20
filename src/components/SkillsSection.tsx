@@ -18,15 +18,16 @@ const SkillsSection = () => {
           <CardHeader>
             <CardTitle className="text-slate-800 flex items-center font-mono">
               <Pickaxe className="w-5 h-5 mr-2 text-amber-600" />
-              Core Skills
+              Languages
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2">
               <Badge variant="outline" className="border-green-500 text-green-700 font-mono">Python</Badge>
-              <Badge variant="outline" className="border-blue-500 text-blue-700 font-mono">JavaScript</Badge>
-              <Badge variant="outline" className="border-purple-500 text-purple-700 font-mono">React</Badge>
-              <Badge variant="outline" className="border-orange-500 text-orange-700 font-mono">TypeScript</Badge>
+              <Badge variant="outline" className="border-blue-500 text-blue-700 font-mono">C/C++</Badge>
+              <Badge variant="outline" className="border-red-500 text-red-700 font-mono">Java</Badge>
+              <Badge variant="outline" className="border-yellow-500 text-yellow-700 font-mono">JavaScript</Badge>
+              <Badge variant="outline" className="border-purple-500 text-purple-700 font-mono">SQL</Badge>
             </div>
           </CardContent>
         </Card>
@@ -35,15 +36,17 @@ const SkillsSection = () => {
           <CardHeader>
             <CardTitle className="text-slate-800 flex items-center font-mono">
               <Wrench className="w-5 h-5 mr-2 text-red-600" />
-              Tools & Frameworks
+              Frameworks & Libraries
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2">
+              <Badge variant="outline" className="border-cyan-500 text-cyan-700 font-mono">React.js</Badge>
+              <Badge variant="outline" className="border-pink-500 text-pink-700 font-mono">React Native</Badge>
               <Badge variant="outline" className="border-slate-500 text-slate-700 font-mono">Node.js</Badge>
-              <Badge variant="outline" className="border-cyan-500 text-cyan-700 font-mono">Tailwind</Badge>
-              <Badge variant="outline" className="border-yellow-500 text-yellow-700 font-mono">Git</Badge>
-              <Badge variant="outline" className="border-indigo-500 text-indigo-700 font-mono">Docker</Badge>
+              <Badge variant="outline" className="border-orange-500 text-orange-700 font-mono">PyTorch</Badge>
+              <Badge variant="outline" className="border-indigo-500 text-indigo-700 font-mono">Next.js</Badge>
+              <Badge variant="outline" className="border-green-500 text-green-700 font-mono">TailwindCSS</Badge>
             </div>
           </CardContent>
         </Card>
@@ -52,15 +55,17 @@ const SkillsSection = () => {
           <CardHeader>
             <CardTitle className="text-slate-800 flex items-center font-mono">
               <Cpu className="w-5 h-5 mr-2 text-emerald-600" />
-              Interests
+              Tools & Platforms
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex flex-wrap gap-2">
-              <Badge variant="outline" className="border-green-500 text-green-700 font-mono">Machine Learning</Badge>
-              <Badge variant="outline" className="border-blue-500 text-blue-700 font-mono">Web Dev</Badge>
-              <Badge variant="outline" className="border-purple-500 text-purple-700 font-mono">Game Dev</Badge>
-              <Badge variant="outline" className="border-red-500 text-red-700 font-mono">AI</Badge>
+              <Badge variant="outline" className="border-yellow-500 text-yellow-700 font-mono">Git</Badge>
+              <Badge variant="outline" className="border-blue-500 text-blue-700 font-mono">Docker</Badge>
+              <Badge variant="outline" className="border-purple-500 text-purple-700 font-mono">AWS</Badge>
+              <Badge variant="outline" className="border-green-500 text-green-700 font-mono">Supabase</Badge>
+              <Badge variant="outline" className="border-red-500 text-red-700 font-mono">Jupyter</Badge>
+              <Badge variant="outline" className="border-indigo-500 text-indigo-700 font-mono">GCP</Badge>
             </div>
           </CardContent>
         </Card>

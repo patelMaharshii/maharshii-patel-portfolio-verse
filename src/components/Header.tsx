@@ -12,7 +12,7 @@ const Header = () => {
       <div className="flex items-center justify-center mb-6">
         <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-800 mr-4 shadow-lg pixelated"></div>
         <h1 className="text-5xl font-bold text-slate-800 font-mono">
-          Alex Neural
+          Maharshii Patel
         </h1>
       </div>
       <p className="text-xl text-slate-600 mb-8 font-mono">
