@@ -1,0 +1,91 @@
+import React from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Briefcase, Calendar, MapPin } from 'lucide-react';
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
+const ExperienceSection = () => {
+  const scrollAnimation = useScrollAnimation();
+
+  return (
+    <section ref={scrollAnimation.ref} className={`mb-16 ${scrollAnimation.className}`}>
+      <h2 className="text-3xl font-bold text-center mb-8 text-slate-800 font-mono">
+        Experience
+      </h2>
+      <div className="space-y-6">
+        <Card className="bg-white/80 border-slate-200 shadow-lg backdrop-blur-sm hover:shadow-xl transition-all">
+          <CardHeader>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <CardTitle className="text-slate-800 font-mono flex items-center">
+                <Briefcase className="w-5 h-5 mr-2 text-green-600" />
+                AI/ML Research Assistant
+              </CardTitle>
+              <Badge variant="secondary" className="bg-green-100 text-green-800 hover:bg-green-200 font-mono w-fit">
+                Current
+              </Badge>
+            </div>
+            <CardDescription className="text-slate-600 font-mono">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm">
+                <span className="flex items-center">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  Western University, London, ON
+                </span>
+                <span className="flex items-center">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  Jan 2025 - Present
+                </span>
+              </div>
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="mb-3">
+              <Badge variant="outline" className="border-blue-500 text-blue-700 font-mono mb-2">
+                NSERC USRA Recipient ($9,632)
+              </Badge>
+            </div>
+            <ul className="text-slate-700 font-mono text-sm leading-relaxed space-y-2">
+              <li>• Performed exploratory data analysis to help doctors at a local pediatric critical care unit perform more efficient handoffs of patients</li>
+              <li>• Achieved 98% predictor accuracy for patient handoff outcomes through data cleaning and ElasticNet-based feature selection on 200+ features</li>
+              <li>• Deploying a genomic sequence generation model to accelerate aptamer discovery with goals of founding a startup and publishing research</li>
+              <li>• Implemented the Absorb & Escape model—a hybrid of diffusion and autoregressive architectures—leveraging UBC's high-performance computing infrastructure</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-white/80 border-slate-200 shadow-lg backdrop-blur-sm hover:shadow-xl transition-all">
+          <CardHeader>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <CardTitle className="text-slate-800 font-mono flex items-center">
+                <Briefcase className="w-5 h-5 mr-2 text-blue-600" />
+                Director of Technology
+              </CardTitle>
+              <Badge variant="outline" className="border-slate-400 text-slate-700 font-mono w-fit">
+                Past Role
+              </Badge>
+            </div>
+            <CardDescription className="text-slate-600 font-mono">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm">
+                <span className="flex items-center">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  Western Developer's Society, London, ON
+                </span>
+                <span className="flex items-center">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  Oct 2024 - May 2025
+                </span>
+              </div>
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <ul className="text-slate-700 font-mono text-sm leading-relaxed space-y-2">
+              <li>• Built an AI-powered campus chatbot with Dr. Yili Tang to provide real-time indoor navigation using natural language</li>
+              <li>• Developed an interactive system that connected the MappedIn API with a chatbot via the OpenAI API, supporting real-time user queries and map navigation</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+};
+
+export default ExperienceSection;

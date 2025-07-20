@@ -5,6 +5,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import Header from "@/components/Header";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
+import ExperienceSection from "@/components/ExperienceSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import GamingSection from "@/components/GamingSection";
 
@@ -22,6 +23,7 @@ const Index = () => {
         <Header />
         <AboutSection />
         <SkillsSection />
+        <ExperienceSection />
         <ProjectsSection />
         <GamingSection />
 
