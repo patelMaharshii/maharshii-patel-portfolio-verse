@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -51,38 +52,15 @@ const ExperienceSection = () => {
             </ul>
           </CardContent>
         </Card>
-
-        <Card className="bg-white/80 border-slate-200 shadow-lg backdrop-blur-sm hover:shadow-xl transition-all">
-          <CardHeader>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-              <CardTitle className="text-slate-800 font-mono flex items-center">
-                <Briefcase className="w-5 h-5 mr-2 text-blue-600" />
-                Director of Technology
-              </CardTitle>
-              <Badge variant="outline" className="border-slate-400 text-slate-700 font-mono w-fit">
-                Past Role
-              </Badge>
-            </div>
-            <CardDescription className="text-slate-600 font-mono">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm">
-                <span className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-1" />
-                  Western Developer's Society, London, ON
-                </span>
-                <span className="flex items-center">
-                  <Calendar className="w-4 h-4 mr-1" />
-                  Oct 2024 - May 2025
-                </span>
-              </div>
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="text-slate-700 font-mono text-sm leading-relaxed space-y-2">
-              <li>• Built an AI-powered campus chatbot with Dr. Yili Tang to provide real-time indoor navigation using natural language</li>
-              <li>• Developed an interactive system that connected the MappedIn API with a chatbot via the OpenAI API, supporting real-time user queries and map navigation</li>
-            </ul>
-          </CardContent>
-        </Card>
+        
+        <div className="flex justify-center mt-8">
+          <Button 
+            variant="outline" 
+            className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono"
+          >
+            View Past Roles →
+          </Button>
+        </div>
       </div>
     </section>
   );

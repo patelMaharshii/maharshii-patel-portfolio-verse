@@ -16,7 +16,7 @@ const Header = () => {
         </h1>
       </div>
       <p className="text-xl text-slate-600 mb-8 font-mono">
-        {'>'} Computer Science Student & Developer
+        {'>'} Computer Science Student & Machine Learning Engineer
       </p>
       <div className="flex justify-center space-x-4">
         <Button 
