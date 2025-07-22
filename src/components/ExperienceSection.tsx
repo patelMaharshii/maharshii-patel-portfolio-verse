@@ -4,9 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Briefcase, Calendar, MapPin } from 'lucide-react';
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useNavigate } from 'react-router-dom';
 
 const ExperienceSection = () => {
   const scrollAnimation = useScrollAnimation();
+  const navigate = useNavigate();
 
   return (
     <section ref={scrollAnimation.ref} className={`mb-16 ${scrollAnimation.className}`}>
@@ -57,6 +59,7 @@ const ExperienceSection = () => {
           <Button 
             variant="outline" 
             className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono"
+            onClick={() => navigate('/experience')}
           >
             View Past Roles →
           </Button>
