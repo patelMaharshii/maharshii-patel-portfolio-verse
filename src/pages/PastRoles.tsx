@@ -12,42 +12,40 @@ const PastRoles = () => {
 
   const pastRoles = [
     {
-      title: "Software Engineering Intern",
-      company: "TechCorp Solutions",
-      location: "Toronto, ON",
+      title: "Director of Technology",
+      company: "Western Developers Society",
+      location: "London, ON",
+      period: "Oct 2024 - May 2025",
+      type: "Leadership",
+      description: [
+        "• Currently working with development team to develop an AI/ML chatbot designed to provide precise directions to specific areas on Western University's campus",
+        "• Integrating chatbot into autonomous robots that navigate campus, enhancing transportation on campus",
+        "• Leading collaborative effort with Dr. Yili Tang, an assistant professor at Western University",
+        "• Managing technical direction and development strategy for the organization"
+      ]
+    },
+    {
+      title: "Software Engineer Intern",
+      company: "Choco Cakes",
+      location: "Brampton, ON",
       period: "May 2024 - Aug 2024",
       type: "Internship",
       description: [
-        "• Developed full-stack web applications using React, Node.js, and PostgreSQL",
-        "• Implemented automated testing suites that improved code coverage by 40%",
-        "• Collaborated with senior developers on microservices architecture design",
-        "• Built RESTful APIs serving 10,000+ daily active users"
+        "• Developed a React.js website to streamline user order management, optimizing data organization of over 300 clients into CSV format for seamless administrative access",
+        "• Collaborated closely with the team to ensure efficient task completion, proactively mitigating more than 15 potential bugs before they could impact workflow",
+        "• Enhanced page traffic and retention rates by 12% through optimizing site speed and enhancing user interface aesthetics"
       ]
     },
     {
-      title: "Junior Web Developer",
-      company: "Digital Innovations Inc.",
-      location: "London, ON",
-      period: "Jan 2024 - Apr 2024",
+      title: "Swim Instructor/Lifeguard",
+      company: "City of Brampton",
+      location: "Brampton, ON", 
+      period: "Sep 2022 - Sep 2024",
       type: "Part-time",
       description: [
-        "• Created responsive websites for local businesses using HTML, CSS, and JavaScript",
-        "• Optimized website performance, achieving 95+ Lighthouse scores",
-        "• Integrated payment systems and e-commerce functionality",
-        "• Maintained and updated existing client websites"
-      ]
-    },
-    {
-      title: "Research Assistant",
-      company: "Western University - Computer Science Dept.",
-      location: "London, ON", 
-      period: "Sep 2023 - Dec 2023",
-      type: "Research",
-      description: [
-        "• Assisted in machine learning research for natural language processing",
-        "• Implemented data preprocessing pipelines for large text datasets",
-        "• Contributed to research paper on sentiment analysis algorithms",
-        "• Presented findings at undergraduate research symposium"
+        "• Taught over 200 youth on lifesaving swimming skills to develop a future team within the lifesaving society",
+        "• Dealt with more than 10 emergency situations and have managed over 200 people",
+        "• Expanded current knowledge of swimming, teaching, and lifesaving techniques"
       ]
     }
   ];
