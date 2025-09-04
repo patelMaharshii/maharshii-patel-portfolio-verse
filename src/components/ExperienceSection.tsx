@@ -28,7 +28,7 @@ const ExperienceSection = () => {
                 Current
               </Badge>
             </div>
-            <CardDescription className="text-slate-600 font-mono">
+            <div className="text-slate-600 font-mono">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm">
                 <span className="flex items-center">
                   <MapPin className="w-4 h-4 mr-1" />
@@ -39,7 +39,7 @@ const ExperienceSection = () => {
                   May 2025 - Present
                 </span>
               </div>
-            </CardDescription>
+            </div>
           </CardHeader>
           <CardContent>
             <div className="mb-3">
@@ -69,7 +69,7 @@ const ExperienceSection = () => {
                 2025
               </Badge>
             </div>
-            <CardDescription className="text-slate-600 font-mono">
+            <div className="text-slate-600 font-mono">
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm">
                 <span className="flex items-center">
                   <MapPin className="w-4 h-4 mr-1" />
@@ -80,7 +80,7 @@ const ExperienceSection = () => {
                   Jan 2025 - May 2025
                 </span>
               </div>
-            </CardDescription>
+            </div>
           </CardHeader>
           <CardContent>
             <ul className="text-slate-700 font-mono text-sm leading-relaxed space-y-2">

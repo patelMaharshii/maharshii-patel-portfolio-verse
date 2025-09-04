@@ -37,6 +37,7 @@ const Index = () => {
           </div>
           <div className="flex justify-center">
             <div id="western-webring"
+                className="w-full max-w-md min-h-[100px] p-4 bg-white/80 rounded-lg border border-slate-200 shadow-sm"
                 data-style="default"
                 data-color="blue"
                 data-show-list="true"
@@ -45,6 +46,9 @@ const Index = () => {
                 data-arrow-prev="&lt; Prev"
                 data-arrow-next="Next &gt;"
                 >
+              <div className="text-center text-slate-500 font-mono text-sm">
+                Loading Western University webring...
+              </div>
             </div>
           </div>
         </section>
