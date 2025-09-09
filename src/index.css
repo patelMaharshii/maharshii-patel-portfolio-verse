@@ -144,3 +144,85 @@ All colors MUST be HSL.
 .animate-projectile {
   animation: projectile 3s linear infinite;
 }
+
+/* Western Webring Custom Styling */
+@layer components {
+  #western-webring {
+    @apply font-mono;
+  }
+
+  /* Main webring container */
+  #western-webring .webring-container,
+  #western-webring > div {
+    @apply bg-slate-50/80 backdrop-blur-sm border border-slate-200 rounded-lg p-4 shadow-sm;
+  }
+
+  /* Webring links styling */
+  #western-webring a {
+    @apply text-slate-700 hover:text-slate-900 font-mono text-sm transition-colors duration-200;
+    @apply relative inline-block;
+  }
+
+  #western-webring a:hover {
+    @apply after:content-[''] after:absolute after:w-full after:scale-x-100 after:h-0.5 after:bottom-0 after:left-0;
+    @apply after:bg-gradient-to-r after:from-green-500 after:via-blue-500 after:to-red-500;
+    @apply after:origin-bottom-left after:transition-transform after:duration-300 pixelated;
+  }
+
+  /* Navigation buttons */
+  #western-webring button,
+  #western-webring .webring-prev,
+  #western-webring .webring-next,
+  #western-webring .webring-random {
+    @apply bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300;
+    @apply px-3 py-1 rounded font-mono text-xs transition-all duration-200;
+    @apply hover:shadow-sm hover:scale-105;
+  }
+
+  /* Site list styling */
+  #western-webring ul,
+  #western-webring .webring-list {
+    @apply space-y-1 mt-2;
+  }
+
+  #western-webring li {
+    @apply text-slate-600 font-mono text-xs;
+  }
+
+  /* Random button special styling */
+  #western-webring .webring-random {
+    @apply bg-gradient-to-r from-green-100 to-blue-100 hover:from-green-200 hover:to-blue-200;
+    @apply border-green-300 text-slate-800 font-bold;
+  }
+
+  /* Title/header styling */
+  #western-webring h3,
+  #western-webring .webring-title {
+    @apply text-slate-800 font-mono font-bold text-sm mb-2;
+  }
+
+  /* Description text */
+  #western-webring p,
+  #western-webring .webring-description {
+    @apply text-slate-600 font-mono text-xs;
+  }
+
+  /* Navigation wrapper */
+  #western-webring .webring-nav,
+  #western-webring nav {
+    @apply flex items-center justify-center gap-2 flex-wrap;
+  }
+
+  /* Ensure proper spacing and layout */
+  #western-webring > * {
+    @apply mb-2 last:mb-0;
+  }
+
+  /* Add retro border effect */
+  #western-webring::before {
+    content: '';
+    @apply absolute inset-0 rounded-lg;
+    background: linear-gradient(45deg, transparent 0%, rgba(34, 197, 94, 0.1) 25%, rgba(59, 130, 246, 0.1) 50%, rgba(239, 68, 68, 0.1) 75%, transparent 100%);
+    @apply -z-10 pixelated;
+  }
+}
