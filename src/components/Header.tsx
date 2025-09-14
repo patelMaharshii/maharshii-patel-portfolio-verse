@@ -41,7 +41,7 @@ const Header = () => {
           variant="outline" 
           size="sm" 
           className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono"
-          onClick={() => window.open('https://maharshii-resume.tiiny.site/', '_blank')}
+          onClick={() => window.open('/Maharshii_Patel_Resume.pdf', '_blank')}
         >
           <FileText className="w-4 h-4 mr-2" />
           Resume
