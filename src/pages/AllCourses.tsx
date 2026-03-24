@@ -24,13 +24,8 @@ const setMeta = (title: string, description: string, canonicalPath: string) => {
 
 const upcomingCourses = [
   { code: "COMPSCI 3305B", title: "Operating Systems" },
-  { code: "COMPSCI 3307A", title: "Object-Oriented Design & Analysis" },
-  { code: "COMPSCI 3319A", title: "Databases I" },
   { code: "COMPSCI 3340B", title: "Analysis of Algorithms I" },
-  { code: "COMPSCI 3342A", title: "Organization of Programming Languages" },
   { code: "COMPSCI 4453B", title: "Reinforcement Learning" },
-  { code: "COMPSCI 3000A", title: "Introduction to Machine Learning" },
-  { code: "STAT 2244A", title: "Statistics for Science" },
 ];
 
 const pastCourses = [
