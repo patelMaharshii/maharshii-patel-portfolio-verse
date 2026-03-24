@@ -50,6 +50,36 @@ const CourseworkSection: React.FC = () => {
             Bridging low-level systems with high-level software design.
           </CardContent>
         </Card>
+
+        <Card className="hover-scale">
+          <CardHeader className="space-y-1">
+            <CardTitle className="flex items-center gap-2 text-base">
+              <Cpu className="opacity-80" />
+              Introduction to Machine Learning (COMPSCI 3000A)
+            </CardTitle>
+            <CardDescription>
+              Supervised/unsupervised learning, neural networks, model evaluation.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-sm text-muted-foreground">
+            Building and evaluating ML models for real-world applications.
+          </CardContent>
+        </Card>
+
+        <Card className="hover-scale">
+          <CardHeader className="space-y-1">
+            <CardTitle className="flex items-center gap-2 text-base">
+              <BookOpen className="opacity-80" />
+              Databases I (COMPSCI 3319A)
+            </CardTitle>
+            <CardDescription>
+              Relational models, SQL, normalization, query optimization.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-sm text-muted-foreground">
+            Designing and querying efficient relational database systems.
+          </CardContent>
+        </Card>
       </div>
 
       <div className={`mt-6 mb-6 flex justify-center ${anim.className}`}>
