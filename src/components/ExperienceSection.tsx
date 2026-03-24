@@ -16,6 +16,42 @@ const ExperienceSection = () => {
         Experience
       </h2>
       <div className="space-y-6">
+        {/* Incoming Role - AMD */}
+        <Card className="bg-white/80 border-slate-200 shadow-lg backdrop-blur-sm hover:shadow-xl transition-all">
+          <CardHeader>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <CardTitle className="text-slate-800 font-mono flex items-center">
+                <Briefcase className="w-5 h-5 mr-2 text-red-600" />
+                Software Development Intern
+              </CardTitle>
+              <Badge variant="secondary" className="bg-red-100 text-red-800 hover:bg-red-200 font-mono w-fit">
+                Incoming
+              </Badge>
+            </div>
+            <div className="text-slate-600 font-mono">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm">
+                <span className="flex items-center">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  AMD, Markham, ON
+                </span>
+                <span className="flex items-center">
+                  <Calendar className="w-4 h-4 mr-1" />
+                  Incoming May 2026
+                </span>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <ul className="text-slate-700 font-mono text-sm leading-relaxed space-y-2">
+              <li>• As a part of the AMD AI Developer Infrastructure team, I will be working with the{' '}
+                <a href="https://github.com/ROCm" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">
+                  ROCm community
+                </a>
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
+
         {/* Current Role - NSERC Research */}
         <Card className="bg-white/80 border-slate-200 shadow-lg backdrop-blur-sm hover:shadow-xl transition-all">
           <CardHeader>
@@ -24,8 +60,8 @@ const ExperienceSection = () => {
                 <Briefcase className="w-5 h-5 mr-2 text-green-600" />
                 AI/ML Research Assistant (NSERC Recipient)
               </CardTitle>
-              <Badge variant="secondary" className="bg-green-100 text-green-800 hover:bg-green-200 font-mono w-fit">
-                Current
+              <Badge variant="outline" className="border-slate-400 text-slate-600 font-mono w-fit">
+                2025
               </Badge>
             </div>
             <div className="text-slate-600 font-mono">
@@ -36,7 +72,7 @@ const ExperienceSection = () => {
                 </span>
                 <span className="flex items-center">
                   <Calendar className="w-4 h-4 mr-1" />
-                  May 2025 - Present
+                  May 2025 - Sept 2025
                 </span>
               </div>
             </div>
@@ -48,11 +84,9 @@ const ExperienceSection = () => {
               </Badge>
             </div>
             <ul className="text-slate-700 font-mono text-sm leading-relaxed space-y-2">
-              <li>• Received the NSERC USRA award ($9632) to continue research under Dr. Apurva Narayan</li>
-              <li>• Finetuned a Discrete Diffusion Model for In Silico SELEX aptamer(DNA) discovery, achieving a validation loss of 0.47 by leveraging UBC's high-performance GPUs</li>
-              <li>• Implemented a CNN-BiLSTM model using Tensorflow & Keras called DeepAptamer to speed up the discovery process of DNA proteins (SELEX), submitting a research paper to the AAAI Symposium</li>
-              <li>• Engineered improvements to the CNN-BiLSTM model by integrating a GlobalAveragePooling1D layer and optimizing DNA shape feature input, elevating validation accuracy to 86% and reducing loss by 12.5%</li>
-              <li>• Optimized model hyperparameters via Bayesian optimization, selecting categorical cross-entropy loss, ADAM optimizer, and a 0.0004 learning rate, to improve stability of predictions in imbalanced datasets</li>
+              <li>• Finetuned a Pytorch Diffusion Model for DNA discovery and received the NSERC USRA award ($9632)</li>
+              <li>• Implemented a CNN-BiLSTM model speeding up the discovery process of DNA proteins by ~75% using Tensorflow & Keras for model building & Scikit-Learn for model training/testing</li>
+              <li>• Engineered improvements to the model by integrating a 1-Dimensional Pooling layer to optimize DNA shape feature input, increasing validation accuracy to 86% and reducing loss by 12.5%</li>
             </ul>
           </CardContent>
         </Card>
