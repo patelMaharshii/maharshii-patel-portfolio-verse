@@ -45,18 +45,23 @@ const ProjectsSection = () => {
         <Card className="bg-white/80 border-slate-200 shadow-lg backdrop-blur-sm group hover:shadow-xl transition-all">
           <CardHeader>
             <CardTitle className="text-slate-800 group-hover:text-blue-700 transition-colors font-mono">
-              Car Analyzer
+              ROCSim
             </CardTitle>
             <CardDescription className="text-slate-600 font-mono">
-              AI vehicle detection system
+              GPU-accelerated physics engine
             </CardDescription>
           </CardHeader>
           <CardContent>
             <p className="text-slate-700 mb-4 font-mono text-sm leading-relaxed">
-              Intelligent vehicle analysis tool for police operations using YOLOv5n and PyTorch. 
-              Detects car color, make, model, and license plates for real-time surveillance.
+              C++ physics engine using OpenGL & Qt with custom GPU kernel scheduling, achieving 60fps real-time 
+              simulation of 1,000,000+ particles. Supports ROCm, CUDA, and CPU fallback across Linux, WSL, & Windows.
             </p>
-            <Button variant="outline" size="sm" className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="border-slate-400 text-slate-700 hover:bg-slate-100 font-mono"
+              onClick={() => window.open('https://github.com/ROCm', '_blank')}
+            >
               <ExternalLink className="w-4 h-4 mr-2" />
               View Project
             </Button>
