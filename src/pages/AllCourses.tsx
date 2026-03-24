@@ -29,6 +29,10 @@ const upcomingCourses = [
 ];
 
 const pastCourses = [
+  { code: "COMPSCI 3000A", title: "Introduction to Machine Learning" },
+  { code: "COMPSCI 3307A", title: "Object-Oriented Design & Analysis" },
+  { code: "COMPSCI 3319A", title: "Databases I" },
+  { code: "COMPSCI 3342A", title: "Organization of Programming Languages" },
   { code: "COMPSCI 2210A", title: "Data Structures & Algorithms" },
   { code: "COMPSCI 2208B", title: "Intro to Computer Organization & Architecture" },
   { code: "COMPSCI 2211A", title: "Software Tools & Systems Programming" },
@@ -37,6 +41,7 @@ const pastCourses = [
   { code: "COMPSCI 2214A", title: "Discrete Structures for Computer Science" },
   { code: "DATASCI 1000A", title: "Data Science Concepts" },
   { code: "DATASCI 2000B", title: "Introduction to Data Science" },
+  { code: "STAT 2244A", title: "Statistics for Science" },
   { code: "CALCULUS 1000A", title: "Calculus I" },
   { code: "CALCULUS 1301B", title: "Calculus II" },
   { code: "CALCULUS 2502A", title: "Advanced Calculus I" },
